@@ -72,8 +72,8 @@ function mobile_orientation_event() {
   if (window.DeviceOrientationEvent) {
     temp.innerHTML = "Yes";
     window.addEventListener('deviceorientation', (e) => {
-      let x = e.gamma * 5;
-      let y = e.beta * 5;
+      let x = e.gamma * 6;
+      let y = e.beta * 10;
       console.log(x, y);
       //Layer 1
       layer_1.style.transform = `translate( ${-x * layer_1_x_speed}px, ${-y * layer_1_y_speed}px)`;
