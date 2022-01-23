@@ -4,7 +4,7 @@
 
 let temp = document.querySelector(".temp");
 
-let container = document.querySelector(".container");
+var container = document.querySelector(".container");
 
 let layer_1 = document.querySelector("svg #Layer-1");
 let layer_2 = document.querySelector("svg #Layer-2");
@@ -32,8 +32,6 @@ filter.classList.toggle('active');
 });
 
 // PC or Mobile
-window.addEventListener('deviceorientation', mobile_event);
-
 let pc = document.querySelector('.PC');
 let mobile = document.querySelector('.mobile');
 pc.addEventListener('click', () => {
@@ -55,12 +53,12 @@ mobile.addEventListener('click', () => {
 //===================
 // Move (PC)
 //===================
-function pc_mouse_event() {
+async function pc_mouse_event() {
   container.addEventListener("mousemove", pc_event);
   // Restore original position
   container.addEventListener("mouseleave", pc_leave);
 }
-let pc_leave = () => {
+var pc_leave = () => {
   // Add restor class
   layer_1.classList.add("restore");
   layer_2.classList.add("restore");
@@ -72,7 +70,7 @@ let pc_leave = () => {
   layer_3.style.transform = "translate(0,0)";
   layer_4.style.transform = "translate(0,0)";
 }
-let pc_event  = (e) => {
+var pc_event  = (e) => {
   // remove restor class
   layer_1.classList.remove("restore");
   layer_2.classList.remove("restore");
@@ -81,6 +79,7 @@ let pc_event  = (e) => {
   
   let x = (e.offsetX - container.offsetWidth * 0.5) * 1.5;
   let y = (e.offsetY - container.clientHeight * 0.5) * 1.5;
+  console.log(x,y);
   //Layer 1
   layer_1.style.transform = `translate( ${-x * layer_1_x_speed}px, ${-y * layer_1_y_speed}px)`;
   //Layer 2
@@ -95,7 +94,7 @@ let pc_event  = (e) => {
 /*=================
 Move (Mobile) (x axis only)
 =================*/
-function mobile_orientation_event() {
+async function mobile_orientation_event() {
   // Check if is supported
   if (window.DeviceOrientationEvent) {
     // temp.innerHTML = "Yes";
@@ -116,3 +115,4 @@ var mobile_event = (e) => {
     //Layer 4
     layer_4.style.transform = `translate( ${-x * layer_4_x_speed}px, ${-y * layer_4_y_speed}px)`;
 }
+mobile_orientation_event();
