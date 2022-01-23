@@ -20,6 +20,14 @@ const layer_3_y_speed = diff_y * 0.6;
 const layer_4_x_speed = diff_x * 0.4;
 const layer_4_y_speed = diff_y * 0.4;
 
+
+/*==================
+Toggle filter
+==================*/
+let filter = document.querySelector('.filter');
+filter.addEventListener('click', () => {
+filter.classList.toggle('active');
+});
 // PC or Mobile
 var isMobile = false; //initiate as false
 // device detection
@@ -104,10 +112,3 @@ function mobile_orientation_event() {
   }
 }
 
-/*==================
-    Toggle filter
-  ==================*/
-let filter = document.querySelector('.filter');
-filter.addEventListener('click', () => {
-  filter.classList.toggle('active');
-});
