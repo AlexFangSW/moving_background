@@ -70,7 +70,7 @@ function mobile_orientation_event() {
   let temp = document.querySelector(".temp");
   // Check if is supported
   if (window.DeviceOrientationEvent) {
-    // temp.innerHTML = "Yes";
+    temp.innerHTML = "Yes";
     window.addEventListener('deviceorientation', (e) => {
       let x = e.gamma * 5;
       let y = e.beta * 5;
@@ -86,7 +86,7 @@ function mobile_orientation_event() {
 
     });
   } else {
-    // temp.innerHTML = "No";
+    temp.innerHTML = "No";
   }
 }
 
