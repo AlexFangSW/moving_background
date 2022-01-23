@@ -77,15 +77,16 @@ function pc_mouse_event() {
 
 function mobile_orientation_event() {
   /*=================
-  Move (Mobile)
+  Move (Mobile) (x axis only)
   =================*/
   // Check if is supported
   if (window.DeviceOrientationEvent) {
     // temp.innerHTML = "Yes";
     window.addEventListener('deviceorientation', (e) => {
       let x = e.gamma * 10;
-      let y = e.beta;
-      y = y * 10
+      // let y = e.beta;
+      // y = y * 10
+      let y = 0;
 
       console.log(x, y);
       //Layer 1
