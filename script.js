@@ -85,7 +85,7 @@ function mobile_orientation_event() {
     window.addEventListener('deviceorientation', (e) => {
       let x = e.gamma * 10;
       let y = e.beta;
-      y = y * 20
+      y = y * 10
 
       console.log(x, y);
       //Layer 1
