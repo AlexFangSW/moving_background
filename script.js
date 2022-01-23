@@ -32,11 +32,7 @@ filter.classList.toggle('active');
 });
 
 // PC or Mobile
-//intialize to mobile
-// Activate current event. Close others.
-container.removeEventListener("mousemove", pc_event);
-container.removeEventListener("mouseleave", pc_leave);
-mobile_orientation_event();
+window.addEventListener('deviceorientation', mobile_event);
 
 let pc = document.querySelector('.PC');
 let mobile = document.querySelector('.mobile');
@@ -108,7 +104,7 @@ function mobile_orientation_event() {
     // temp.innerHTML = "No";
   }
 }
-let mobile_event = (e) => {
+var mobile_event = (e) => {
     let x = e.gamma * 10;
     let y = 0;
     //Layer 1
