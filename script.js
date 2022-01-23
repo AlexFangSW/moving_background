@@ -72,7 +72,7 @@ function mobile_orientation_event() {
   if (window.DeviceOrientationEvent) {
     temp.innerHTML = "Yes";
     window.addEventListener('deviceorientation', (e) => {
-      let x = e.gamma * 6;
+      let x = e.gamma * 10;
       let y = e.beta * 10;
       console.log(x, y);
       //Layer 1
