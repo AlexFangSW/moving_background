@@ -76,10 +76,10 @@ var pc_event  = (e) => {
   layer_2.classList.remove("restore");
   layer_3.classList.remove("restore");
   layer_4.classList.remove("restore");
-  
-  let x = (e.offsetX - container.offsetWidth * 0.5) * 1.5;
+  // 這裡使用 offset， 因為這樣比較好算 (從0開始)。長寬沒差
+  let x = (e.offsetX - container.clientWidth * 0.5) * 1.5;
   let y = (e.offsetY - container.clientHeight * 0.5) * 1.5;
-  console.log(x,y);
+  console.log(e.offsetX,e.offsetY);
   //Layer 1
   layer_1.style.transform = `translate( ${-x * layer_1_x_speed}px, ${-y * layer_1_y_speed}px)`;
   //Layer 2

@@ -103,11 +103,13 @@ svg #Layer-4.restore {
 }
 .select .option {
   cursor: pointer;
-  user-select: none;
 }
 .select .mobile.active ~ .indiactor {
   transform: translate(-4.35rem);
 }
 .select .PC.active ~ .indiactor {
   transform: translate(0);
+}
+p {
+  pointer-events: none;
 }
