@@ -97,10 +97,10 @@ Move (Mobile) (x axis only)
 async function mobile_orientation_event() {
   // Check if is supported
   if (window.DeviceOrientationEvent) {
-    // temp.innerHTML = "Yes";
+    temp.innerHTML = "Yes";
     window.addEventListener('deviceorientation', mobile_event);
   } else {
-    // temp.innerHTML = "No";
+    temp.innerHTML = "No";
   }
 }
 var mobile_event = (e) => {
