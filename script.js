@@ -97,7 +97,7 @@ Move (Mobile) (x axis only)
 async function mobile_orientation_event() {
   // Check if is supported
   if (window.DeviceOrientationEvent) {
-    temp.innerHTML = "Yes";
+    temp.innerHTML = `Yes`;
     window.addEventListener('deviceorientation', mobile_event);
   } else {
     temp.innerHTML = "No";
@@ -106,6 +106,8 @@ async function mobile_orientation_event() {
 var mobile_event = (e) => {
     let x = e.gamma * 10;
     let y = 0;
+    //Debug
+    temp.innerHTML = `gamma : ${x.toFixed(2)}`;
     //Layer 1
     layer_1.style.transform = `translate( ${-x * layer_1_x_speed}px, ${-y * layer_1_y_speed}px)`;
     //Layer 2
